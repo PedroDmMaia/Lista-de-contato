@@ -12,6 +12,7 @@ const ListaContatos = () => {
       {contatos.map((item) => (
         <li key={item.nome}>
           <Contato
+            id={item.id}
             nome={item.nome}
             email={item.email}
             telefone={item.telefone}

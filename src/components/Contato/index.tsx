@@ -3,12 +3,14 @@ import ContatoProps from '../../models/contatos'
 
 import * as S from './styles'
 
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { remover, editar } from '../../store/reducers/contato'
+import { RootReducer } from '../../store'
 
 type Props = ContatoProps
 
 const Contato = ({
+  id,
   nome: nomeOriginal,
   email: emailOriginal,
   telefone: telefoneOriginal
@@ -21,6 +23,8 @@ const Contato = ({
   const [telefone, setTelefone] = useState(0)
 
   const dispatch = useDispatch()
+
+  const state = useSelector((state: RootReducer) => state.contato.itens)
 
   useEffect(() => {
     if (
@@ -47,11 +51,13 @@ const Contato = ({
     trocaCor()
     dispatch(
       editar({
+        id,
         nome,
         email,
         telefone
       })
     )
+    console.log(state)
     setEstaEditando(false)
   }
 
@@ -77,7 +83,7 @@ const Contato = ({
           onChange={({ target }) => setEmail(target.value)}
         />
         <S.Campo
-          value={telefone === 0 || isNaN(telefone) ? '' : telefone.toString()}
+          value={telefone === 0 || isNaN(telefone) ? '' : telefone}
           disabled={!estaEditando}
           onChange={({ target }) => setTelefone(Number(target.value))}
         />

@@ -15,4 +15,8 @@ export const Container = styled.div`
   color: #fff;
   letter-spacing: 5px;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `

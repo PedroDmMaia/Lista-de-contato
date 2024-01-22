@@ -31,6 +31,10 @@ export const Box = styled.div`
   box-shadow: 0px 4px 10px rgb(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   padding: 30px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
 
 export const Titulo = styled.h2`

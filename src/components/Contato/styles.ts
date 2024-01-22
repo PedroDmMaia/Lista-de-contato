@@ -20,6 +20,12 @@ export const Card = styled.div<Props>`
   textarea {
     color: ${(props) => (props.cor === '#fff' ? '#000' : '#fff')};
   }
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 `
 export const BotaoContato = styled(Botao)<Props>`
   font-weight: normal;
@@ -28,6 +34,10 @@ export const BotaoContato = styled(Botao)<Props>`
   margin-left: 15px;
   border: 2px solid ${(props) => (props.cor === '#fff' ? '#000' : '#fff')};
   color: ${(props) => (props.cor === '#fff' ? '#000' : '#fff')};
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `
 
 export const Campo = styled.textarea`

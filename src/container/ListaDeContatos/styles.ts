@@ -18,4 +18,8 @@ export const Lista = styled.ul`
 
   &::-webkit-scrollbar-track {
   }
+
+  @media (max-width: 768px) {
+    height: 35vh;
+  }
 `
